@@ -77,12 +77,12 @@ function lzgp() {
 # Artisan
 # -----------------------------------------------------
 alias pa='php artisan'
-alias pas='php artisan serve --port=8000'
-alias pat='pa test -p --processes=2'
-alias pt='composer lint && composer types-check && pa test -p && pa test --type-coverage'
+alias par='php artisan route:list'
+alias pas='php artisan serve'
+alias pat='pa test -p --stop-on-failure --stop-on-error --stop-on-defect'
 alias pr='php artisan clear-compiled && php artisan cache:clear && php artisan config:clear && php artisan route:clear && php artisan view:clear'
 alias mfs='php artisan migrate:fresh --seed'
-alias pt='composer lint && composer types-check && pa test --type-coverage && pa test -p'
+alias pt='composer lint && composer types-check && pa test --type-coverage && pa test -p --stop-on-defect --stop-on-failure --stop-on-error'
 alias pr="php artisan clear-compiled && php artisan cache:clear && php artisan config:clear && php artisan route:clear && php artisan view:clear"
 alias mfs="php artisan migrate:fresh --seed"
 

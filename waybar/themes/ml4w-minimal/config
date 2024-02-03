@@ -46,7 +46,7 @@
         "custom/updates",
         "pulseaudio",
         // START BT TOOGLE
-        "bluetooth",
+"bluetooth",
         // END BT TOOGLE
         "battery", 
         // START NETWORK TOOGLE
