@@ -48,7 +48,7 @@ alias dot="cd ~/dotfiles"
 alias gt="cd ~/github/"
 alias prj="gt && cd integral-Erp-Api"
 alias rmd='/bin/rm  --recursive --force --verbose '
-alias sshs='ssh dh_jpj5rq@ada.dreamhost.com'
+alias sshs='ssh dh_jpj5rq@pdx1-shared-a1-07.dreamhost.com'
 alias vim="nvim"
 alias cpf='cpupower frequency-info'
 alias b="bun"
@@ -167,3 +167,24 @@ else
         echo "Start Hyprland with command Hyprland"
     fi
 fi
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH=$BUN_INSTALL/bin:$PATH
+
+
+PATH=~/.console-ninja/.bin:$PATH
+
+#Yazi set wrapper
+function ya() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXX")"
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
