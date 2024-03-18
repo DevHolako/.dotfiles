@@ -79,6 +79,7 @@ function lzgp() {
 alias pa='php artisan'
 alias par='php artisan route:list'
 alias pas='php artisan serve'
+alias pasl="pas --host=$(localip)"
 alias pat='pa test -p --stop-on-failure --stop-on-error --stop-on-defect'
 alias pr='php artisan clear-compiled && php artisan cache:clear && php artisan config:clear && php artisan route:clear && php artisan view:clear'
 alias mfs='php artisan migrate:fresh --seed'
@@ -188,4 +189,5 @@ function ya() {
 	fi
 	rm -f -- "$tmp"
 }
-eval "$(zoxide init bash)"
+eval "$(zoxide init --cmd cd bash)"
+. "$HOME/.cargo/env"

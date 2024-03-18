@@ -59,6 +59,7 @@
         // END IDLE TOOGLE
         "custom/exit",
         "clock",
+        "hyprland/language",
         // START TRAY TOOGLE
         "tray",
         // END TRAY TOOGLE

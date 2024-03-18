@@ -58,6 +58,7 @@
         "separate-outputs": true
     },
 
+
     // ML4W Welcome App
     "custom/ml4w-welcome": {
         "on-click": "~/dotfiles/apps/ML4W_Welcome-x86_64.AppImage",
@@ -252,7 +253,8 @@
     }, 
 
     "hyprland/language": {
-        "format": "/ K {short}"
+        "format": "{short}",
+        "on-click": "bash ~/dotfiles/hypr/scripts/keyboardtoggel.sh"
     },
 
     // Group Hardware
@@ -290,7 +292,7 @@
         "orientation": "horizontal",
         "modules": [
             "custom/browser",
-            "custom/filemanager",
+            "custom/filemanager"
          ]
     },
 
@@ -334,9 +336,9 @@
         "format-source": "{volume}% ",
         "format-source-muted": "",
         "format-icons": {
-            "headphone": " ",
-            "hands-free": " ",
-            "headset": " ",
+            "headphone": "  ",
+            "hands-free": "  ",
+            "headset": "  ",
             "phone": " ",
             "portable": " ",
             "car": " ",
