@@ -27,12 +27,12 @@ alias nf='neofetch'
 alias pf='pfetch'
 alias ls='eza -a --icons'
 alias ll='eza -al --icons'
-alias lt='eza -a --tree --level=1 --icons'
+alias ltt='eza -a --tree --level=1 --icons'
 alias cleanup='~/dotfiles/scripts/cleanup.sh'
 alias ml4w='~/dotfiles/apps/ML4W_Welcome-x86_64.AppImage'
 alias localip='ifconfig | sed -n "s/^.*inet \(192.[0-9]*.[0-9]*.[0-9]*\).*$/\1/p"'
 alias serve='php artisan serve --host=`localip`'
-
+alias pf="lt -p $1 -s $2"
 alias c="code"
 alias rl="source ~/.bashrc"
 alias nf='neofetch'
@@ -49,6 +49,9 @@ alias gt="cd ~/github/"
 alias prj="gt && cd integral-Erp-Api"
 alias rmd='/bin/rm  --recursive --force --verbose '
 alias sshs='ssh dh_jpj5rq@pdx1-shared-a1-07.dreamhost.com'
+alias sshsuper="ssh -p 65002 u963254282@195.35.51.30"
+alias myssh="ssh holako@138.2.177.137"
+
 alias vim="nvim"
 alias cpf='cpupower frequency-info'
 alias b="bun"
@@ -120,7 +123,7 @@ alias vmstop='virsh --connect qemu:///system destroy win11'
 alias confq='$EDITOR ~/dotfiles/qtile/config.py'
 alias confp='$EDITOR ~/dotfiles/picom/picom.conf'
 alias confb='$EDITOR ~/dotfiles/.bashrc'
-
+alias confd='$EDITOR ~/dotfiles/'
 # -----------------------------------------------------
 # EDIT NOTES
 # -----------------------------------------------------
@@ -177,6 +180,13 @@ export NVM_DIR="$HOME/.nvm"
 export BUN_INSTALL="$HOME/.bun"
 export PATH=$BUN_INSTALL/bin:$PATH
 
+# laravel
+#export LARAVEL_INSTALL="$HOME/.config/composer/vendor/laravel/installer/bin/laravel"
+
+PATH=$HOME/.config/composer/vendor/bin:~/.composer/vendor/bin:$PATH
+export PATH
+
+
 
 PATH=~/.console-ninja/.bin:$PATH
 
@@ -188,6 +198,30 @@ function ya() {
 		cd -- "$cwd"
 	fi
 	rm -f -- "$tmp"
+
 }
+
 eval "$(zoxide init --cmd cd bash)"
 . "$HOME/.cargo/env"
+
+
+##### fzf 
+eval "$(fzf --bash)"
+
+# -- Use fd instead of fzf --
+
+export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exclude .git"
+
+# Use fd (https://github.com/sharkdp/fd) for listing path candidates.
+# - The first argument to the function ($1) is the base path to start traversal
+# - See the source code (completion.{bash,zsh}) for the details.
+_fzf_compgen_path() {
+  fd --hidden --exclude .git . "$1"
+}
+
+# Use fd to generate the list for directory completion
+_fzf_compgen_dir() {
+  fd --type=d --hidden --exclude .git . "$1"
+}

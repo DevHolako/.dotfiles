@@ -101,7 +101,7 @@
     // Settings
     "custom/settings": {
         "format": "",
-        "on-click": "alacritty --class dotfiles-floating -e ~/dotfiles/hypr/settings/settings.sh",
+        "on-click": "~/dotfiles/apps/ML4W_Dotfiles_Settings-x86_64.AppImage",
         "tooltip": false
     },
 
@@ -306,7 +306,8 @@
         "format-disabled": "",
         "format-off": "",
         "interval": 30,
-        "on-click": "blueman-manager"
+        "on-click": "blueman-manager",
+        "format-no-controller": ""
     },
 
     // Other
@@ -324,6 +325,6 @@
             "activated": "",
             "deactivated": ""
         },
-        "on-click-right": "swaylock"        
+        "on-click-right": "hyprlock"        
     }
 }

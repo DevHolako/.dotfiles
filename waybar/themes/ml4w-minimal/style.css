@@ -134,7 +134,8 @@ window#waybar.empty #window {
 #custom-settings, 
 #custom-wallpaper, 
 #custom-system,
-#custom-waybarthemes {
+#custom-waybarthemes
+{
     margin-right: 23px;
     font-size: 14px;
     font-weight: bold;
@@ -346,7 +347,13 @@ window#waybar.empty #window {
     animation-iteration-count: infinite;
     animation-direction: alternate;
 }
-
+#custom-mouse-sensitivity{
+    font-size: 14px;
+    color: @iconcolor;
+    margin: 0px 15px 0px 0px;
+    animation: blink 0.5s linear;
+    background-image: url("../assets/arrow.png");
+}
 /* -----------------------------------------------------
  * Tray
  * ----------------------------------------------------- */

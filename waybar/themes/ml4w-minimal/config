@@ -10,59 +10,47 @@
 //
 {
     // General Settings
+    "position": "top",
+        "margin-bottom": 0,
+            "layer": "top",
+                "margin-left": 0,
+                    "margin-right": 0,
+                        "spacing": 0,
 
-    // Position TOP
-    "layer": "top",
-    "margin-bottom": 0,
+                            // Load Modules
+                            "include": ["~/dotfiles/waybar/modules.json"],
 
-    // Position BOTTOM
-    // "position": "bottom",
-    // "margin-top": 0,
-    // "margin-bottom": 14,
-    
-    "layer": "top",
-    "margin-left": 0,
-    "margin-right": 0,    
-    "spacing": 0,
+                                // Modules Left
+                                "modules-left": [
+                                    "custom/appmenuicon",
+                                    "user",
+                                    "hyprland/workspaces",
+                                    "custom/ml4w-welcome",
+                                    "group/settings",
+                                    "group/quicklinks",
+                                ],
 
-    // Load Modules
-    "include": ["~/dotfiles/waybar/modules.json"],
 
-    // Modules Left
-    "modules-left": [
-        "custom/appmenuicon",
-        "hyprland/workspaces",
-        "group/settings",
-        "group/quicklinks"
-    ],
+                                    // Modules Center
+                                    "modules-center": [
+                                        "hyprland/window",
+                                    ],
 
-    // Modules Center
-    "modules-center": [
-        "hyprland/window"
-    ],
 
-    // Modules Right    
-    "modules-right": [
-        "custom/updates",
-        "pulseaudio",     
-        // START BT TOOGLE
-       "bluetooth",
-        // END BT TOOGLE
-        "battery", 
-        // START NETWORK TOOGLE
-        "network",
-        // END NETWORK TOOGLE
-        "group/hardware",
-        "custom/cliphist",
-        // START IDLE TOOGLE
-        "idle_inhibitor",
-        // END IDLE TOOGLE
-        "custom/exit",
-        "clock",
-        "hyprland/language",
-        // START TRAY TOOGLE
-        "tray",
-        // END TRAY TOOGLE
-        "custom/ml4w-welcome"
-    ]
+                                        // Modules Right    
+                                        "modules-right": [
+                                            "temperature",
+					    "custom/updates",
+                                            "pulseaudio",
+                                            "bluetooth",
+                                            "battery",
+                                            "custom/cliphist",
+                                            "custom/mouse-sensitivity",
+					    "tray",
+                                            "wlr/taskbar",
+                                            "clock",
+                                            "idle_inhibitor",
+                                            "custom/exit",
+
+]
 }
